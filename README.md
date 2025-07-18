@@ -29,7 +29,7 @@ The model uses a pretrained CNN architecture (MobileNetV2) and fine-tunes it on 
 ## 🖼️ Example Prediction
 
 ```
---- Prediction for: /path/to/image.jpg ---
+--- Prediction for: /content/results/predicted_gettyimages-157383990-612x612.jpg
 Predicted Waste Type: Trash
 Confidence: 0.9834
 Predicted Class Index: 2
