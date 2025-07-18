@@ -4,28 +4,31 @@ This project applies transfer learning to classify types of waste (e.g., trash, 
 
 ## 🧠 Project Overview
 
-The model uses a pretrained CNN architecture (e.g., ResNet or similar) and fine-tunes it on a custom waste dataset. This helps in accurately identifying waste types even with limited training data.
+The model uses a pretrained CNN architecture (MobileNetV2) and fine-tunes it on a custom waste dataset. This helps in accurately identifying waste types even with limited training data.
 
 ## 🔍 Key Features
 
-- Image classification using PyTorch and transfer learning
-- Real-time or batch prediction of waste type
-- Confidence score for each prediction
-- Handles image loading errors gracefully
+- Image classification using PyTorch and transfer learning  
+- Real-time or batch prediction of waste type  
+- Confidence score for each prediction  
+- Handles image loading errors gracefully  
 
 ## 📁 Directory Structure
 
 ```
 .
 ├── predict.py                 # Main prediction script
+├── train.py                  # Training script (optional)
 ├── model.pth                 # Trained PyTorch model (not included here)
 ├── dataset/                  # Folder containing image dataset
+├── requirements.txt          # Python dependencies
+├── .gitignore                # Git ignore file
 └── README.md                 # Project documentation
 ```
 
 ## 🖼️ Example Prediction
 
-```bash
+```
 --- Prediction for: /path/to/image.jpg ---
 Predicted Waste Type: Trash
 Confidence: 0.9834
@@ -43,15 +46,14 @@ cd waste
 
 ### 2. Install Requirements
 
-Ensure Python 3.7+ is installed. Then install the following dependencies:
-
 ```bash
-pip install torch torchvision pillow
+pip install -r requirements.txt
 ```
 
 ### 3. Load or Train Your Model
 
-Place your trained model file as `model.pth` in the root directory. You can train your own or fine-tune an existing one using transfer learning.
+Place your trained model file as `model.pth` in the root directory.  
+You can also train your own model using `train.py`.
 
 ### 4. Predict Waste Type
 
@@ -63,13 +65,13 @@ python predict.py
 
 ## ⚙️ Configuration
 
-- Image size: 224x224
-- Normalization values: `[0.485, 0.456, 0.406]`, `[0.229, 0.224, 0.225]` (ImageNet standard)
-- Device: GPU or CPU (automatically handled in your full code)
+- Image size: 224x224  
+- Normalization values: `[0.485, 0.456, 0.406]`, `[0.229, 0.224, 0.225]`  
+- Device: GPU or CPU (automatically detected)
 
 ## 🧪 Dataset
 
-Ensure your dataset is available locally in this format:
+The dataset should be structured like this:
 
 ```
 TrashType_Image_Dataset/
@@ -80,16 +82,16 @@ TrashType_Image_Dataset/
 └── ...
 ```
 
-The directory names will automatically become class labels via `ImageFolder`.
+The folder names will automatically become class labels using `ImageFolder`.
 
 ## 👨‍💻 Author
 
-Ashok Kumar Reddy P  
-[GitHub](https://github.com/ashok910)
+Vikram P  
+[GitHub Profile](https://github.com/Vikram-tech512)
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
