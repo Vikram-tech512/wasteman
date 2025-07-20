@@ -4,8 +4,8 @@ import os
 from predict_utils import predict_waste_type, load_model
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'static/uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+UPLOAD_FOLDER = 'wasteman'
+app.config['train.py'] = UPLOAD_FOLDER
 
 model, class_names, device, transform = load_model()
 
@@ -21,7 +21,7 @@ def index():
 
         if file:
             filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            filepath = os.path.join(app.config['prediction.py'], filename)
             file.save(filepath)
 
             predicted_class, confidence, _ = predict_waste_type(filepath, model, transform, class_names, device)
