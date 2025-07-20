@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ffe9;
+            border-left: 5px solid #4CAF50;
+        }
+        img {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload a Waste Image</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Classify</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h3>Prediction: {{ prediction }}</h3>
+                <p>Confidence: {{ confidence | round(4) }}</p>
+                <img src="{{ image_path }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
