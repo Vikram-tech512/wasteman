@@ -16,14 +16,16 @@ The model uses a pretrained CNN architecture (MobileNetV2) and fine-tunes it on 
 ## 📁 Directory Structure
 
 ```
-.
-├── predict.py                 # Main prediction script
-├── train.py                  # Training script (optional)
-├── model.pth                 # Trained PyTorch model (not included here)
-├── dataset/                  # Folder containing image dataset
-├── requirements.txt          # Python dependencies
-├── .gitignore                # Git ignore file
-└── README.md                 # Project documentation
+TrashType_Image_Dataset/         # Image dataset directory
+LICENSE                          # Open-source license file
+README.md                        # Project documentation
+.gitignore                       # Git ignore rules
+requirements.txt                 # Python dependencies
+train.py                         # Training script
+prediction.py                    # Prediction script with model logic
+model.pth                        # (Make sure this is added) Trained PyTorch model
+app.py                           # Flask application backend
+index.html                       # HTML frontend for image upload and results
 ```
 
 ## 🖼️ Example Prediction
